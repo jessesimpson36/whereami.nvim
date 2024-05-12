@@ -23,6 +23,17 @@ the output will be
 global.postgresql.enabled
 ```
 
+## JumpToPath2
+
+This function will let you jump to a place in the yaml file.
+
+```
+:JumpToPath2 global.postgresql.enabled
+```
+
+will place the cursor on `enabled` in the file.
+
+
 ## Installation
 
 Add the following to your plug line (assuming you use vim-plug)
