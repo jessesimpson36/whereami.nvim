@@ -25,7 +25,7 @@ function M.whereami()
   if currentCursorWord ~= lastKnownWord then
     path = path .. "." .. currentCursorWord
   end
-  -- print(path)
+  print(path)
 end
 
 function M.readtext(node)
