@@ -23,12 +23,12 @@ the output will be
 global.postgresql.enabled
 ```
 
-## JumpToPath2
+## JumpToPath
 
 This function will let you jump to a place in the yaml file.
 
 ```
-:JumpToPath2 global.postgresql.enabled
+:JumpToPath global.postgresql.enabled
 ```
 
 will place the cursor on `enabled` in the file.

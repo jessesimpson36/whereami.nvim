@@ -28,29 +28,6 @@ function M.whereami()
   print(path)
 end
 
-function M.jumptopath(path)
-  options = {}
-  options["direction"] = "float"
-  aerial.open(options)
-  aerial.sync_load()
-  vim.cmd("goto")
-  local i = 0
-  local prefix = ""
-  local last = ""
-  for subpath in string.gmatch(path, "[^%.]+") do
-    prefix = '\\[[A-Z]\\] '
-    for j=1,i do
-      prefix = " " .. prefix
-    end
-    print(subpath)
-    vim.fn.search("^" .. prefix .. subpath, "W")
-    i = i + 2
-    last = subpath
-  end
---  aerial.select()
---  aerial.close()
-end
-
 function M.readtext(node)
   local startrow, startcolumn, startbyte_count = node:start()
   startcolumn = startcolumn + 1
@@ -124,7 +101,7 @@ function M.deepestNode(pathArray, node)
   end
 end
 
-function M.jumptopath2(path)
+function M.jumptopath(path)
   local ts_utils = require 'nvim-treesitter.ts_utils'
   local node = ts_utils.get_node_at_cursor()
   local parent = node

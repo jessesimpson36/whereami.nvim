@@ -19,5 +19,4 @@ exe "lua package.path = package.path .. ';" . s:lua_rocks_deps_loc . "/aerial.nv
 " Exposes the plugin's functions for use as commands in Neovim.
 command! -nargs=0 WhereAmI lua require("whereami").whereami()
 command! -nargs=1 JumpToPath lua require("whereami").jumptopath(<q-args>)
-command! -nargs=1 JumpToPath2 lua require("whereami").jumptopath2(<q-args>)
 
