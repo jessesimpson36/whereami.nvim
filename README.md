@@ -43,7 +43,13 @@ Plug 'jessesimpson36/whereami.nvim'
 
 Then under your lua section in, add a mapping for it such as:
 ```
-vim.keymap.set("n", "<leader>w", "<cmd>WhereAmI<CR>")
+vim.keymap.set("n", "<leader>jw", "<cmd>WhereAmI<CR>")
+
+function jumpy()
+  require("whereami").jumptopath(vim.fn.input("Where do you want to jump to?: "))
+end
+vim.keymap.set("n", "<leader>jj", jumpy)
+
 ```
 
 Now whenever you hit `<leader>w`, it will call the WhereAmI function and you won't lose your way.
