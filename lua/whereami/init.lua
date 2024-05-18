@@ -25,7 +25,7 @@ function M.whereami()
   if currentCursorWord ~= lastKnownWord then
     path = path .. "." .. currentCursorWord
   end
-  print(path)
+  -- print(path)
 end
 
 function M.readtext(node)
@@ -92,7 +92,7 @@ function M.deepestNode(pathArray, node)
           if text == pathArray[1] then
             local size = M.arraySize(pathArray)
             local subArray = M.subArray(pathArray, 2, size)
-            print(text)
+            -- print(text)
             return M.deepestNode(subArray, innerInnerChild)
           end
         end
@@ -110,7 +110,7 @@ function M.jumptopath(path)
     local parentText = M.readtext(parent)
     local type = parent:type()
     if type == "block_mapping_pair" then
-      print(parentText)
+      -- print(parentText)
     end
     lastParent = parent
     parent = parent:parent()
